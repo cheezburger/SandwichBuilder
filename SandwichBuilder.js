@@ -1,12 +1,14 @@
 	var world;
 
-	var worldWidth = 20;
-	var worldHeight = 14;
+	var worldWidth = 14;
+	var worldHeight = 20;
 	var homeX = worldWidth/2;
-	var homeY = -10;
+	var homeY = -5;
 	var drawScale = 30.0;
 	
 	var drawables = [];
+	var bgImage = new Image();
+	bgImage.src = "images/background.png";
 
 	function Drawable(imageUri, body)
 	{
@@ -143,6 +145,8 @@
 	 var canvas = document.getElementById("canvas");
 	 //clear the canvas
 	 canvas.width = canvas.width;
+	 var context = canvas.getContext("2d");
+	 context.drawImage(bgImage, 0, 0);
 	 
 	 //draw ALL the things!
 	 for (var i=0; i < drawables.length; i++)
